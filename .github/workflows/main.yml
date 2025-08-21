@@ -1,0 +1,23 @@
+name: First Test Workflow
+
+on:
+  push:
+    branches:
+      - main  # or 'master', depending on your default branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run a simple echo command
+        run: echo "🎉 Hello from GitHub Actions!"
+
+      - name: List files in the workspace
+        run: ls -la
+
+      - name: Show current directory
+        run: pwd
